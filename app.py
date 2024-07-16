@@ -7,7 +7,7 @@ import plotly.express as px
 
 headers = {
 
-    "authorization": st.secrets["auth_token"],
+    "authorization": st.secrets["auth_key"],
     "content-type": "application/json"
 }
 

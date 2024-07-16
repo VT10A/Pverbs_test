@@ -12,7 +12,7 @@ def get_chat_completions(user_input):
     api_url = "https://aila.savanta.com/pubapi/v1/chatcompletions"
 
     # API key (replace with your actual API key)
-    api_key = auth_token
+    api_key = auth_key
 
     # Request payload
     payload = {
