@@ -5,11 +5,7 @@ from APIcall import get_chat_completions
 import plotly.express as px
 
 
-headers = {
 
-    "authorization": st.secrets["auth_key"],
-    "content-type": "application/json"
-}
 
 # Load the dataset
 @st.cache_data

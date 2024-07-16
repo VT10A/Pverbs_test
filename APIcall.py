@@ -2,6 +2,10 @@
 import requests
 import random
 import string
+import streamlit as st  
+
+# Access API key
+api_key = st.secrets["api"]["auth_key"]
 
 ### Set up & cached functions #################################################################################################
 
@@ -12,7 +16,7 @@ def get_chat_completions(user_input):
     api_url = "https://aila.savanta.com/pubapi/v1/chatcompletions"
 
     # API key (replace with your actual API key)
-    api_key = auth_key
+   # api_key = auth_key
 
     # Request payload
     payload = {
@@ -37,7 +41,7 @@ def get_chat_completions(user_input):
     # Headers
     headers = {
         "Content-Type": "application/json",
-        "X-API-Key": auth_key
+        "X-API-Key": api_key
     }
 
     # Make the API request
