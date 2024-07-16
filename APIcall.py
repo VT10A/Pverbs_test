@@ -5,7 +5,7 @@ import string
 import streamlit as st  
 
 # Access API key
-api_key = st.secrets["api"]["auth_key"]
+api_key = st.secrets["auth_key"]
 
 ### Set up & cached functions #################################################################################################
 
