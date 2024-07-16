@@ -37,7 +37,7 @@ def get_chat_completions(user_input):
     # Headers
     headers = {
         "Content-Type": "application/json",
-        "X-API-Key": auth_token
+        "X-API-Key": auth_key
     }
 
     # Make the API request
