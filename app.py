@@ -43,7 +43,7 @@ if filter_type == "Filtered":
     filtered_data = data[(data['Age'].isin(age_filter)) & (data['Brand'].isin(brand_filter)) & (data['Country'].isin(country_filter))]
 
     # Calculate topic percentages using filtered data
-    topics = filtered_data.columns[1:20]
+    topics = filtered_data.columns[1:21]
     topic_percentages = {}
     topic_samples = {}
     for topic in topics:
@@ -88,7 +88,7 @@ if filter_type == "Filtered":
     )
 else:
     # Calculate topic percentages for total dataset
-    topics = data.columns[1:20]
+    topics = data.columns[1:21]
     topic_percentages = {}
     topic_samples = {}
     for topic in topics:
