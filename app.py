@@ -4,8 +4,13 @@ from random import sample
 from APIcall import get_chat_completions
 import plotly.express as px
 
-
-
+# Define the text for chat completions
+chat_completion_text = (
+    "Summarise the top 4 topics (excluding the 'Other' from the top 4) in two sentences, "
+    "in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on "
+    "the items that have the highest percentages only (rank the top 4). Don't use decimals. "
+    "Here's the data {topic_percentages}."
+)
 
 # Load the dataset
 @st.cache_data
@@ -38,7 +43,7 @@ if filter_type == "Filtered":
     filtered_data = data[(data['Age'].isin(age_filter)) & (data['Brand'].isin(brand_filter)) & (data['Country'].isin(country_filter))]
 
     # Calculate topic percentages using filtered data
-    topics = filtered_data.columns[1:21]
+    topics = filtered_data.columns[1:20]
     topic_percentages = {}
     topic_samples = {}
     for topic in topics:
@@ -63,7 +68,7 @@ if filter_type == "Filtered":
     fig.update_traces(hovertemplate=hovertemplate)
 
     # Write a short heading
-    heading = get_chat_completions(f"Summarise the top 4 topics - those with the highest % in descending order (excluding the 'Other' topic from this ranking) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}.")
+    heading = get_chat_completions(chat_completion_text.format(topic_percentages=topic_percentages))
     st.write(heading)
 
     # Display the chart in the main area
@@ -83,7 +88,7 @@ if filter_type == "Filtered":
     )
 else:
     # Calculate topic percentages for total dataset
-    topics = data.columns[1:21]
+    topics = data.columns[1:20]
     topic_percentages = {}
     topic_samples = {}
     for topic in topics:
@@ -108,7 +113,7 @@ else:
     fig.update_traces(hovertemplate=hovertemplate)
 
     # Write a short heading
-    heading = get_chat_completions(f"Summarise the top 4 topics - those with the highest % in descending order (excluding the 'Other' topic from this ranking) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}")
+    heading = get_chat_completions(chat_completion_text.format(topic_percentages=topic_percentages))
     st.write(heading)
 
     # Display the chart for total dataset in the main area
