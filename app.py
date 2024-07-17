@@ -6,7 +6,7 @@ import plotly.express as px
 
 # Define the text for chat completions
 chat_completion_text = (
-    "Exclude the 'Other' topic from the following dataset and then rank the percentages for each topic in descending order and keep a mental note of the top four only. With this shortlist, summarise these top 4 topics in two sentences, "
+    "Exclude the 'Other' topic from the following dataset and then rank the percentages for each topic in descending order and keep a mental note of the top four only (don't bullet point them). With this shortlist, summarise these top 4 topics in two sentences, "
     "in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on "
     "the items that have the highest percentages only (rank the top 4). Don't use decimals. "
     "Here's the data {topic_percentages}."
