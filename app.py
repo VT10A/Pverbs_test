@@ -8,7 +8,7 @@ import plotly.express as px
 chat_completion_text = (
     "Summarise the top 4 topics (excluding the 'Other' from the top 4) in two sentences, "
     "in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on "
-    "the items that have the highest percentages only (rank the top 4). Don't use decimals. "
+    "the items that have the highest percentages only (rank the top 4) as I noticed you keep putting odds above atmosphere as an example - be careful. Don't use decimals. "
     "Here's the data {topic_percentages}."
 )
 
