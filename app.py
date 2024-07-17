@@ -63,7 +63,7 @@ if filter_type == "Filtered":
     fig.update_traces(hovertemplate=hovertemplate)
 
     # Write a short heading
-    heading = get_chat_completions(f"Summarise the top 4 highest % topics (excluding the 'Other' from the top 4) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}.")
+    heading = get_chat_completions(f"Summarise the top 4 topics - those with the highest % in descending order (excluding the 'Other' topic from this ranking) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}.")
     st.write(heading)
 
     # Display the chart in the main area
@@ -108,7 +108,7 @@ else:
     fig.update_traces(hovertemplate=hovertemplate)
 
     # Write a short heading
-    heading = get_chat_completions(f"Summarise the top 4 highest % topics (excluding the 'Other' from the top 4) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}.")
+    heading = get_chat_completions(f"Summarise the top 4 topics - those with the highest % in descending order (excluding the 'Other' topic from this ranking) in two sentences, in the format X, Y, and Z are the top 4 cited themes. Make sure your commentry focuses on the items that have the highest percentages only (rank the top 4). Don't use decimals. Here's the data {topic_percentages}")
     st.write(heading)
 
     # Display the chart for total dataset in the main area
