@@ -6,8 +6,8 @@ import plotly.express as px
 
 # Define the text for chat completions
 chat_completion_text = (
-    "Exclude the 'Other' topic from the following dataset and then rank the percentages for each topic in descending order and store the top four in your memory. Briefly summarise these top 4 topics in two sentences with no bullet points and in a direct manner as if you were a researcher communicting the result, "
-    "in the format X, Y, B and Z are the top 4 cited themes."
+    "Exclude the 'Other' topic from the following dataset and then rank the percentages for each topic in descending order and store the top four in your memory. Briefly summarise these top 4 topics in two sentences with no bullet points, "
+    "strictly in the format X, Y, B and Z are the top 4 cited themes. "
     "Don't use decimals only rounded percentages in your commentry"
     "Here's the data {topic_percentages}."
 )
